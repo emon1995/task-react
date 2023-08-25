@@ -3,7 +3,7 @@ import FileUpload from '../FileUpload/FileUpload';
 
 const Card = () => {
     return (
-        <div className="m-4 bg-white rounded my-4 p-4">
+        <div className="min-w-[500px] bg-white rounded my-4 p-4">
             {/* client name */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
