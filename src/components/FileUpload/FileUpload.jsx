@@ -4,6 +4,7 @@ import Modal from '../Modal/Modal';
 
 const FileUpload = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [count, setCount] = useState(0);
 
     const openModal = () => {
         setIsOpen(true);
@@ -39,11 +40,12 @@ const FileUpload = () => {
     return (
         <div className="flex items-center gap-2 ">
             <FaPaperclip className='cursor-pointer' onClick={openModal} />
-            <h1 className='font-bold text-sm'>25</h1>
+            <h1 className='font-bold text-sm'>{count}</h1>
             <Modal
                 modalHandler={modalHandler}
                 isOpen={isOpen}
                 closeModal={closeModal}
+                setCount={setCount}
             />
         </div>
     );

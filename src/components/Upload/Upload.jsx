@@ -3,7 +3,7 @@ import img from '../../assets/cloud-upload.png';
 import { useRef, useState } from 'react';
 import axios from 'axios';
 
-const Upload = () => {
+const Upload = ({ setCount }) => {
     const [files, setFiles] = useState([]);
     const fileInputRef = useRef(null);
 
@@ -16,13 +16,14 @@ const Upload = () => {
         const formData = new FormData();
         const filesUp = e.target.files;
         setFiles([...filesUp]);
+        setCount(filesUp.length)
         console.log(filesUp);
 
         for (let i = 0; i < filesUp.length; i++) {
             formData.append(`files`, filesUp[i])
         }
 
-        axios.post('https://task-react-server-60sqq2egv-emon1995.vercel.app/upload', formData)
+        axios.post('https://task-react-server.onrender.com/upload', formData)
             .then(data => {
                 console.log(data);
             })

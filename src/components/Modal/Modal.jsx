@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import Upload from "../Upload/Upload";
 
-const Modal = ({ closeModal, isOpen }) => {
+const Modal = ({ closeModal, isOpen, setCount }) => {
     return (
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -36,7 +36,7 @@ const Modal = ({ closeModal, isOpen }) => {
                                 >
                                     Review Info Before Reserve
                                 </Dialog.Title>
-                                <Upload />
+                                <Upload setCount={setCount} />
                                 <hr className="mt-8 " />
                                 <div className='flex mt-2 justify-around'>
                                     <button
