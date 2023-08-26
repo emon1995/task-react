@@ -22,7 +22,7 @@ const Upload = () => {
             formData.append(`files`, filesUp[i])
         }
 
-        axios.post('http://localhost:3000/upload', formData)
+        axios.post('https://task-react-server-60sqq2egv-emon1995.vercel.app/upload', formData)
             .then(data => {
                 console.log(data);
             })
